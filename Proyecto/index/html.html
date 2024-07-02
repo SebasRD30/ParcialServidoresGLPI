@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidores</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenido a Nuestro Sitio Web</h1>
+    </header>
+    <main>
+        <section>
+            <h3>Actualización del Sistema</h3>
+            <p>Comando: sudo apt update && sudo apt upgrade</p>
+            <p>Este comando se utiliza para actualizar la lista de paquetes disponibles y sus versiones, seguido por la
+                actualización de todos los paquetes instalados en el sistema a sus últimas versiones disponibles. Es una
+                buena práctica mantener el sistema actualizado para asegurarse de tener las últimas correcciones de
+                errores
+                y parches de seguridad.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/1.png"></li>
+                <li><img src="/Proyecto/imagenes/2.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Instalacion de las Dependencias</h3>
+            <p>Comando: sudo apt install -y apache2 libapache2-mod-php php php-cli php-mysql php-gd php-mbstring
+                php-curl php-xml
+                php-ldap php-apcu mariadb-server mariadb-client.</p>
+            <p>Este comando instala automáticamente y sin requerir confirmación (gracias a la opción -y) el servidor web
+                Apache,
+                varios módulos y extensiones de PHP necesarios para el desarrollo web, así como el servidor de bases de
+                datos MariaDB
+                y su cliente, proporcionando un entorno completo para ejecutar aplicaciones web y gestionar bases de
+                datos.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/3.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Instalación de Apache</h3>
+            <p>Comando: sudo apt install apache2 libapache2-mod-php php php-cli php-mysql</p>
+            <p>Este comando instala el servidor web Apache, que es uno de los servidores web más utilizados. Apache
+                permite
+                servir contenido web a los usuarios.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/4.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Configuración de Apache para Usar el Puerto 81</h3>
+            <p>comando: sudo nano /etc/apache2/ports.conf<br>
+                Cambio: Añadir Listen 81</p>
+            <p>Por defecto, Apache escucha en el puerto 80. Este cambio le indica a Apache que también escuche en el
+                puerto
+                81.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/5.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Editar el archivo del sitio por defecto </h3>
+            <p>comando: sudo nano /etc/apache2/sites-available/000-default.conf</p>
+            Cambio: Cambiar VirtualHost *:80 a VirtualHost *:81</p>
+            <p>Este cambio en la configuración del sitio web de Apache le dice a Apache que el sitio debería estar
+                disponible en el puerto 81 en lugar del puerto 80.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/6.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Reiniciamos apache para aplicar los cambios</h3>
+            <p> comando: sudo systemctl restart apache2</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/7.png"></li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h3> Generacion de un certificado SSL autofirmado</h3>
+            <p> comando: udo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout
+                /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/8.png"></li>
+                <li><img src="/Proyecto/imagenes/9.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Configuracion de Nginx como proxy inverso </h3>
+            <p> comando: sudo apt install nginx</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/10.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Configuracion de Nginx para que actue como proxy inverso </h3>
+            <p> creamos un archivo de configuracion para el sitio nginx</p>
+            <p> comando: sudo nano /etc/nginx/sites-available/glpi</p>
+            <p> se agrega el siguiente codigo:</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/11.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Crear archivo de configuracion SSL </h3>
+            <p> comando: sudo mkdir -p /etc/nginx/snippets</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/12.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Accedemos como administrador al siguiente codigo </h3>
+            <p> comando: sudo nano /etc/nginx/snippets/ssl-glpi.conf</p>
+            <p>abre el archivo de configuración ssl-glpi.conf en el editor de texto nano con permisos de superusuario, permitiendo editar los ajustes relacionados con SSL (Secure Sockets Layer) para el servidor web Nginx en relación con la aplicación GLPI (Gestión Libre de Parque Informático).</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/13.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Habilitar la configuración y reiniciar Nginx </h3>
+            <p> comando: sudo ln -s /etc/nginx/sites-available/glpi /etc/nginx/sites-enabled/ </p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/14.png"></li>
+                <li><img src="/Proyecto/imagenes/15.png"></li>
+                <li><img src="/Proyecto/imagenes/16.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Instalación de MariaDB</h3>
+            <p>sudo apt install mariadb-server</p>
+            <p>MariaDB es un sistema de gestión de bases de datos relacional que es compatible con MySQL. Este comando
+                instala el servidor de bases de datos MariaDB.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/17.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Verificación e Inicialización de MariaDB</h3>
+            <p>sudo mysql_secure_installation</p>
+            <p>Este comando ayuda a asegurar la instalación de MariaDB configurando una contraseña para el usuario root
+                y
+                eliminando cuentas de usuario anónimas, bases de datos de prueba, y deshabilitando el inicio de sesión
+                remoto para el root.</p>
+            <p>Nos aseguramos de que si haya quedado instalada la base de datos, aceptamos sus términos y condiciones y
+                nos
+                agradecerá con un mensaje.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/18.png"></li>
+                <li><img src="/Proyecto/imagenes/19.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Creación de la Base de Datos y Usuario para GLPI</h3>
+            <p>sudo mysql -u root -p</p>
+            <p>Estos comandos crean una base de datos llamada glpi, un usuario glpiuser con una contraseña especificada,
+                y
+                le otorgan todos los privilegios sobre la base de datos glpi.</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/20.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Creamos la base de datos GLPI</h3>
+            <ul>
+                <li><img src="/Proyecto/imagenes/21.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Creamos el usuario 'glpiuser' </h3>
+            <ul>
+                <li><img src="/Proyecto/imagenes/22.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Le otorgamos privilegios </h3>
+            <ul>
+                <li><img src="/Proyecto/imagenes/23.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Agregamos el siguiente comando y nos salimos usando el comando exit </h3>
+            <ul>
+                <li><img src="/Proyecto/imagenes/24.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Permitir conexiones remotas (en el servidor de base de datos) </h3>
+                <p>Editar el archivo de configuración</p>
+                <p>comando: sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/25.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Reiniciamos MariaDB </h3>
+            <p> comando: sudo systemctl restart MariaDB</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/26.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Instalamos y configuramos el GLPI </h3>
+            <p> comando: cd /var/www/html</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/27.png"></li>
+            </ul>
+            <p> comando: sudo wget https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/28.png"></li>
+            </ul>
+            <p>comando: sudo tar -xvzf glpi-10.0.6.tgz</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/29.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Creamos un directorio temporal para extraer el archivo </h3>
+            <p> comando: mkdir /tmp/glpi</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/30.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Extraemos el archivo en el directorio temporal </h3>
+            <p> comando: sudo tar -xvzf glpi-10.0.6.tgz -C /tmp/glpi</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/31.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Movemos el contenido al destino deseado </h3>
+            <p> comando: sudo mv /tmp/glpi/glpi /var/www/html/glpi</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/32.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Limpiamos el directorio temporal </h3>
+            <p> comando: rm -rf /tmp/glpi</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/33.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> cambia el propietario del directorio glpi y sus contenidos a www-data, el usuario y grupo del servidor web. </h3>
+            <p> comando: sudo chown -R www-data:www-data /var/www/html/glpi</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/34.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> cambia el propietario del directorio glpi y sus contenidos a www-data, el usuario y grupo del servidor web. </h3>
+            <p> comando: sudo chmod -R 755 /var/www/html/glpi</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/35.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Configurar Apache para GLPI </h3>
+            <p>Crear un archivo de configuración para GLPI:</p>
+            <p> comando: sudo nano /etc/apache2/sites-available/glpi.conf</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/36.png"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Habilitamos el sitio y reiniciamos apache</h3>
+            <p>comando: sudo a2ensite glpi.conf</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/37.png"></li>
+                <li><img src="/Proyecto/imagenes/38.png"></li>
+            </ul>
+            <p>Aquí deshabilitamos pagina de apache predeterminada para activar el glpi.</p>
+            <p>comando: sudo a2dissite 000-default.conf</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/39.png"></li>
+            </ul>
+            <p> comando: sudo a2ensite glpi.conf</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/40.png"></li>
+            </ul>
+            <p> comando: sudo systemctl restart apache2</p>
+            <ul>
+                <li><img src="/Proyecto/imagenes/41.png"></li>
+            </ul>
+        </section>
+
+        
+    </main>
+    <footer>
+        <p>&copy; Sebastian Ruiz y Diego Vargas</p>
+        <p>2024</p>
+    </footer>
+</body>
+
+</html>
