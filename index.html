@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servidores</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
@@ -22,8 +22,10 @@
                 errores
                 y parches de seguridad.</p>
             <ul>
-                <center><li><img src="/imagenes/1.png"></li>
-                <li><img src="/imagenes/2.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/1.png"></li>
+                    <li><img src="./imagenes/2.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -39,7 +41,9 @@
                 y su cliente, proporcionando un entorno completo para ejecutar aplicaciones web y gestionar bases de
                 datos.</p>
             <ul>
-            <center><li><img src="/imagenes/3.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/3.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -50,7 +54,9 @@
                 permite
                 servir contenido web a los usuarios.</p>
             <ul>
-            <center><li><img src="/imagenes/4.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/4.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -62,7 +68,9 @@
                 puerto
                 81.</p>
             <ul>
-            <center><li><img src="/imagenes/5.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/5.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -73,7 +81,9 @@
             <p>Este cambio en la configuración del sitio web de Apache le dice a Apache que el sitio debería estar
                 disponible en el puerto 81 en lugar del puerto 80.</p>
             <ul>
-            <center><li><img src="/imagenes/6.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/6.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -81,7 +91,9 @@
             <h3> Reiniciamos apache para aplicar los cambios</h3>
             <p> comando: sudo systemctl restart apache2</p>
             <ul>
-            <center><li><img src="/imagenes/7.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/7.png"></li>
+                </center>
             </ul>
 
         </section>
@@ -91,8 +103,10 @@
             <p> comando: udo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout
                 /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt</p>
             <ul>
-            <center><li><img src="/imagenes/8.png"></li>
-                <li><img src="/imagenes/9.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/8.png"></li>
+                    <li><img src="./imagenes/9.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -100,7 +114,9 @@
             <h3> Configuracion de Nginx como proxy inverso </h3>
             <p> comando: sudo apt install nginx</p>
             <ul>
-            <center><li><img src="/imagenes/10.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/10.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -110,7 +126,9 @@
             <p> comando: sudo nano /etc/nginx/sites-available/glpi</p>
             <p> se agrega el siguiente codigo:</p>
             <ul>
-            <center><li><img src="/imagenes/11.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/11.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -118,16 +136,22 @@
             <h3> Crear archivo de configuracion SSL </h3>
             <p> comando: sudo mkdir -p /etc/nginx/snippets</p>
             <ul>
-            <center><li><img src="/imagenes/12.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/12.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
             <h3> Accedemos como administrador al siguiente codigo </h3>
             <p> comando: sudo nano /etc/nginx/snippets/ssl-glpi.conf</p>
-            <p>abre el archivo de configuración ssl-glpi.conf en el editor de texto nano con permisos de superusuario, permitiendo editar los ajustes relacionados con SSL (Secure Sockets Layer) para el servidor web Nginx en relación con la aplicación GLPI (Gestión Libre de Parque Informático).</p>
+            <p>abre el archivo de configuración ssl-glpi.conf en el editor de texto nano con permisos de superusuario,
+                permitiendo editar los ajustes relacionados con SSL (Secure Sockets Layer) para el servidor web Nginx en
+                relación con la aplicación GLPI (Gestión Libre de Parque Informático).</p>
             <ul>
-            <center><li><img src="/imagenes/13.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/13.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -135,9 +159,11 @@
             <h3> Habilitar la configuración y reiniciar Nginx </h3>
             <p> comando: sudo ln -s /etc/nginx/sites-available/glpi /etc/nginx/sites-enabled/ </p>
             <ul>
-            <center><li><img src="/imagenes/14.png"></li>
-                <li><img src="/imagenes/15.png"></li>
-                <li><img src="/imagenes/16.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/14.png"></li>
+                    <li><img src="./imagenes/15.png"></li>
+                    <li><img src="./imagenes/16.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -147,7 +173,9 @@
             <p>MariaDB es un sistema de gestión de bases de datos relacional que es compatible con MySQL. Este comando
                 instala el servidor de bases de datos MariaDB.</p>
             <ul>
-            <center><li><img src="/imagenes/17.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/17.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -162,8 +190,10 @@
                 nos
                 agradecerá con un mensaje.</p>
             <ul>
-            <center><li><img src="/imagenes/18.png"></li>
-                <li><img src="/imagenes/19.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/18.png"></li>
+                    <li><img src="./imagenes/19.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -174,44 +204,56 @@
                 y
                 le otorgan todos los privilegios sobre la base de datos glpi.</p>
             <ul>
-            <center><li><img src="/imagenes/20.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/20.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
             <h3> Creamos la base de datos GLPI</h3>
             <ul>
-            <center><li><img src="/imagenes/21.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/21.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
             <h3> Creamos el usuario 'glpiuser' </h3>
             <ul>
-            <center><li><img src="/imagenes/22.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/22.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
             <h3> Le otorgamos privilegios </h3>
             <ul>
-            <center><li><img src="/imagenes/23.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/23.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
             <h3> Agregamos el siguiente comando y nos salimos usando el comando exit </h3>
             <ul>
-            <center><li><img src="/imagenes/24.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/24.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
             <h3> Permitir conexiones remotas (en el servidor de base de datos) </h3>
-                <p>Editar el archivo de configuración</p>
-                <p>comando: sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</p>
+            <p>Editar el archivo de configuración</p>
+            <p>comando: sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</p>
             <ul>
-            <center><li><img src="/imagenes/25.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/25.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -219,7 +261,9 @@
             <h3> Reiniciamos MariaDB </h3>
             <p> comando: sudo systemctl restart MariaDB</p>
             <ul>
-            <center><li><img src="/imagenes/26.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/26.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -227,15 +271,21 @@
             <h3> Instalamos y configuramos el GLPI </h3>
             <p> comando: cd /var/www/html</p>
             <ul>
-            <center><li><img src="/imagenes/27.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/27.png"></li>
+                </center>
             </ul>
             <p> comando: sudo wget https:/github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz</p>
             <ul>
-            <center><li><img src="/imagenes/28.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/28.png"></li>
+                </center>
             </ul>
             <p>comando: sudo tar -xvzf glpi-10.0.6.tgz</p>
             <ul>
-            <center><li><img src="/imagenes/29.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/29.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -243,7 +293,9 @@
             <h3> Creamos un directorio temporal para extraer el archivo </h3>
             <p> comando: mkdir /tmp/glpi</p>
             <ul>
-            <center><li><img src="/imagenes/30.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/30.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -251,7 +303,9 @@
             <h3> Extraemos el archivo en el directorio temporal </h3>
             <p> comando: sudo tar -xvzf glpi-10.0.6.tgz -C /tmp/glpi</p>
             <ul>
-            <center><li><img src="/imagenes/31.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/31.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -259,7 +313,9 @@
             <h3> Movemos el contenido al destino deseado </h3>
             <p> comando: sudo mv /tmp/glpi/glpi /var/www/html/glpi</p>
             <ul>
-            <center><li><img src="/imagenes/32.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/32.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -267,23 +323,31 @@
             <h3> Limpiamos el directorio temporal </h3>
             <p> comando: rm -rf /tmp/glpi</p>
             <ul>
-            <center><li><img src="/imagenes/33.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/33.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
-            <h3> cambia el propietario del directorio glpi y sus contenidos a www-data, el usuario y grupo del servidor web. </h3>
+            <h3> cambia el propietario del directorio glpi y sus contenidos a www-data, el usuario y grupo del servidor
+                web. </h3>
             <p> comando: sudo chown -R www-data:www-data /var/www/html/glpi</p>
             <ul>
-            <center><li><img src="/imagenes/34.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/34.png"></li>
+                </center>
             </ul>
         </section>
 
         <section>
-            <h3> cambia el propietario del directorio glpi y sus contenidos a www-data, el usuario y grupo del servidor web. </h3>
+            <h3> cambia el propietario del directorio glpi y sus contenidos a www-data, el usuario y grupo del servidor
+                web. </h3>
             <p> comando: sudo chmod -R 755 /var/www/html/glpi</p>
             <ul>
-            <center><li><img src="/imagenes/35.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/35.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -292,7 +356,9 @@
             <p>Crear un archivo de configuración para GLPI:</p>
             <p> comando: sudo nano /etc/apache2/sites-available/glpi.conf</p>
             <ul>
-            <center><li><img src="/imagenes/36.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/36.png"></li>
+                </center>
             </ul>
         </section>
 
@@ -300,25 +366,33 @@
             <h3> Habilitamos el sitio y reiniciamos apache</h3>
             <p>comando: sudo a2ensite glpi.conf</p>
             <ul>
-            <center><li><img src="/imagenes/37.png"></li>
-                <li><img src="/imagenes/38.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/37.png"></li>
+                    <li><img src="./imagenes/38.png"></li>
+                </center>
             </ul>
             <p>Aquí deshabilitamos pagina de apache predeterminada para activar el glpi.</p>
             <p>comando: sudo a2dissite 000-default.conf</p>
             <ul>
-            <center><li><img src="/imagenes/39.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/39.png"></li>
+                </center>
             </ul>
             <p> comando: sudo a2ensite glpi.conf</p>
             <ul>
-            <center><li><img src="/imagenes/40.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/40.png"></li>
+                </center>
             </ul>
             <p> comando: sudo systemctl restart apache2</p>
             <ul>
-            <center><li><img src="/imagenes/41.png"></li></center>
+                <center>
+                    <li><img src="./imagenes/41.png"></li>
+                </center>
             </ul>
         </section>
 
-        
+
     </main>
     <footer>
         <p>&copy; Sebastian Ruiz y Diego Vargas</p>
